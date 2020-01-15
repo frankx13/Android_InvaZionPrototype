@@ -1,4 +1,4 @@
-package com.nadawoo.nadazonepluspandamobile.invazionprototype;
+package com.nadawoo.nadazonepluspandamobile.invazionprototype.activities;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.nadawoo.nadazonepluspandamobile.invazionprototype.R;
 
 public class MenuActivity extends AppCompatActivity {
 

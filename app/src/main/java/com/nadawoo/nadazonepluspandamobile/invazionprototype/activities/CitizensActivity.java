@@ -1,10 +1,6 @@
-package com.nadawoo.nadazonepluspandamobile.invazionprototype;
+package com.nadawoo.nadazonepluspandamobile.invazionprototype.activities;
 
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.PixelFormat;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,12 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nadawoo.nadazonepluspandamobile.invazionprototype.R;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.api.Client;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.api.InvaZionService;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.Citizen;
@@ -32,16 +27,12 @@ import com.nadawoo.nadazonepluspandamobile.invazionprototype.utils.UIUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class CitizensActivity extends AppCompatActivity {
 
