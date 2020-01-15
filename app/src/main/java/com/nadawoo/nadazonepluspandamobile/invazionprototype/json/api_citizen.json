@@ -1,0 +1,29 @@
+{
+  "metas": {
+    "api_status": "stable",
+    "api_version": "1.1",
+    "api_newest_version": "1.1",
+    "error_code": "success",
+    "error_class": "info",
+    "error_message": "Voici toutes les donn\u00e9es concernant le citoyen n\u00b053.",
+    "error_details": null
+  },
+  "datas": {
+    "citizen_id": 53,
+    "citizen_pseudo": "Mortagh",
+    "map_id": 1,
+    "city_id": 0,
+    "coord_y": 0,
+    "coord_x": 0,
+    "action_points": 0,
+    "last_death": "0000-00-00",
+    "speciality": "weak",
+    "item_amount": null,
+    "control_points": 5,
+    "can_change_speciality": 1,
+    "distance_to_city": 0,
+    "bag_size": 4,
+    "bag_items": [],
+    "pictos": []
+  }
+}

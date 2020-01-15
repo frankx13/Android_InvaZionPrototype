@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/standard_btn"
+    android:id="@+id/citizens_container">
+
+    <TextView
+        android:id="@+id/citizens_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_sample"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/citizens_id"
+        android:layout_below="@id/citizens_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/id_sample"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/citizens_location"
+        android:layout_below="@id/citizens_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location_sample"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="18sp"/>
+
+</RelativeLayout>
