@@ -45,10 +45,9 @@ public class MenuActivity extends AppCompatActivity {
         btnRankings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MenuActivity.this, "Le Panthéon est en développement :)", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MenuActivity.this, RankingsActivity.class);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent(MenuActivity.this, RankingsActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

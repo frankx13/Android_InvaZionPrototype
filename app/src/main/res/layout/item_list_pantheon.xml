@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/border_item_grad_red"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pantheon_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_citizen"
+        android:textAlignment="center"
+        android:textColor="#9C0000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pantheon_item_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/id_sample"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/pantheon_item_last_death"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/citizen_last_death"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/pantheon_item_survival_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/survival_time_pantheon_item"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>

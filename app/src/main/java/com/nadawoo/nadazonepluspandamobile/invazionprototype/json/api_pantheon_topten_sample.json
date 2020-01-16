@@ -1,0 +1,73 @@
+{
+  "metas": {
+    "api_status": "stable",
+    "api_version": "1.1",
+    "api_newest_version": "1.1",
+    "error_code": "success",
+    "error_class": "info",
+    "error_message": "Voici le classement des joueurs actuellement vivants ayant surv\u00e9cu le plus longtemps.",
+    "error_details": null
+  },
+  "datas": [
+    {
+      "citizen_id": 74,
+      "citizen_pseudo": "SirStache",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 165,
+      "citizen_pseudo": "GLKS",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 145,
+      "citizen_pseudo": "ninjaja",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 84,
+      "citizen_pseudo": "Aria",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 162,
+      "citizen_pseudo": "west",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 132,
+      "citizen_pseudo": "Maelg",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 42,
+      "citizen_pseudo": "Nadawoo",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 81,
+      "citizen_pseudo": "Sargeras",
+      "last_death": "2018-07-15",
+      "survival_time": 550
+    },
+    {
+      "citizen_id": 45,
+      "citizen_pseudo": "Onyr",
+      "last_death": "0000-00-00",
+      "survival_time": null
+    },
+    {
+      "citizen_id": 321,
+      "citizen_pseudo": "Zankoue",
+      "last_death": "0000-00-00",
+      "survival_time": null
+    }
+  ]
+}

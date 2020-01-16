@@ -37,4 +37,6 @@
     <string name="citizen_location">Position : [%d,%d]</string>
     <string name="not_in_town">En ville ? Non</string>
     <string name="is_in_town">En ville ? Oui</string>
+    <string name="pantheon_name_item">Boblefou</string>
+    <string name="survival_time_pantheon_item">Survie max : 35J</string>
 </resources>

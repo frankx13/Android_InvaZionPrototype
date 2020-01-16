@@ -14,12 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RankingsActivity" />
-        <activity android:name=".CitizensActivity" />
-        <activity android:name=".MapActivity" />
-        <activity android:name=".MenuActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.RankingsActivity" />
+        <activity android:name=".activities.CitizensActivity" />
+        <activity android:name=".activities.MapActivity" />
+        <activity android:name=".activities.MenuActivity" />
     </application>
 
 </manifest>
