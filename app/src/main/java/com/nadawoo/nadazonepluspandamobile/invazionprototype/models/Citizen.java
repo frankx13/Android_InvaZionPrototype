@@ -20,5 +20,4 @@ public class Citizen {
     public void setCitizenData(CitizenData citizenData) {
         this.citizenData = citizenData;
     }
-
 }

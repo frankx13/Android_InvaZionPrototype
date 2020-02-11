@@ -168,5 +168,17 @@
             android:textSize="22sp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/exit_citizens_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_btn_theme"
+        android:padding="10dp"
+        android:text="@string/back"
+        android:textColor="#DB1D1D"
+        android:textSize="20sp" />
 
 </RelativeLayout>

@@ -1,11 +1,8 @@
 package com.nadawoo.nadazonepluspandamobile.invazionprototype.api;
 
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.Citizen;
-import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.GameMap;
+import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.InvazionMap;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.Pantheon;
-import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.PantheonData;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,12 +13,16 @@ public interface InvaZionService {
 
     @GET("api/maps.php?action=get&map_id=1")
         // Map API
-    Call<List<GameMap>> getMap();
+    Call<InvazionMap> getMap();
 
-    @GET("api/citizens.php?action=get&map_id=1")// Citizens API
+    //TESTING
+    @GET("api/citizens.php?action=get&map_id=1")
+// CitizenS API
     Call<String> getCitizens(@Query("append-url") String url);
 
-    @GET// Citizen API
+    //WORK OK
+    @GET
+    // Citizen API
     Call<Citizen> getOneCitizen(@Url String url);
 
     //WORK OK
@@ -29,6 +30,7 @@ public interface InvaZionService {
     // Citizen API
     Call<Citizen> getOneCitizenBru();
 
-    @GET("api/citizens.php?action=get&map_id=1&top=survival")// Citizen API
+    @GET("api/citizens.php?action=get&map_id=1&top=survival")
+// Citizen API
     Call<Pantheon> getPantheonTopTen();
 }

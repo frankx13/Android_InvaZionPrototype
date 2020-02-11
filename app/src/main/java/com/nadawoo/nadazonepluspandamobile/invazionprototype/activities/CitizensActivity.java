@@ -1,5 +1,6 @@
 package com.nadawoo.nadazonepluspandamobile.invazionprototype.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -69,6 +70,8 @@ public class CitizensActivity extends AppCompatActivity {
     Button searchInputValidateBtn;
     @BindView(R.id.user_image)
     ImageView userImage;
+    @BindView(R.id.exit_citizens_btn)
+    Button exitCitizenSection;
     //---UI---///
     //---DATA---///
     private String searchCitizenInput = "0";
@@ -86,6 +89,14 @@ public class CitizensActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         citizens = new ArrayList();
+        exitCitizenSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         showAllCitizens();
         searchOneCitizen();

@@ -18,5 +18,4 @@ public class Pantheon {
     public void setDatas(List<PantheonData> datas) {
         this.datas = datas;
     }
-
 }

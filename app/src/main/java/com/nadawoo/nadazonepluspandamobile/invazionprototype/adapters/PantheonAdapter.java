@@ -37,9 +37,9 @@ public class PantheonAdapter extends RecyclerView.Adapter<PantheonAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolderMP holder, int position) {
         holder.nameCitizen.setText(mData.get(position).getCitizenPseudo());
-        holder.idCitizen.setText(String.valueOf(mData.get(position).getCitizenId()));
-        holder.lastDeathCitizen.setText(mData.get(position).getLastDeath());
-        holder.survivalTime.setText(String.valueOf(mData.get(position).getSurvivalTime()));
+        holder.idCitizen.setText("ID : " + mData.get(position).getCitizenId());
+        holder.lastDeathCitizen.setText("Last death : " + mData.get(position).getLastDeath());
+        holder.survivalTime.setText("Days survived : " + mData.get(position).getSurvivalTime());
     }
 
     @Override

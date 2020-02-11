@@ -29,7 +29,7 @@ dependencies {
 
     //RETROFIT
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    //RETOFIT SCALARS-CONVERTER
+    //RETROFIT SCALARS-CONVERTER
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
     //GSON RETROFIT
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
