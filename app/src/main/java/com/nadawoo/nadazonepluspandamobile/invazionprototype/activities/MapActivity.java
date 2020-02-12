@@ -94,11 +94,13 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
         if (event.getAction() == MotionEvent.ACTION_UP) {
             xTouched = (int) (event.getX() * mapWidth / map.getWidth());
             yTouched = (int) (event.getY() * mapHeight / map.getHeight());
+
+            Log.i("TOUCHED", "xPos : " + xTouched + " yPos : " + yTouched);
+
+            //TODO fix blank screen when postInvalidate() is called
+//            map.postInvalidate();
         }
 
-        Log.i("TOUCHED", "xPos : " + xTouched + " yPos : " + yTouched);
-
-        map.postInvalidate();
         return true;
     }
 

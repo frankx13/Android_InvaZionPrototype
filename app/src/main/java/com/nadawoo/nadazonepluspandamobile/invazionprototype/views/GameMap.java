@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.R;
@@ -17,11 +18,19 @@ import java.util.Map;
 public class GameMap extends View {
     private int mapHeight;
     private int mapWidth;
+    private int mapTotalTiles;
+    private int counterBackLine;
+    private int counterTiles;
+    private int width;
+    private int height;
+
+    private Context context;
 
     private Map<String, InvazionMapZone> gameObjects;
     private MapActivity mapActivity;
 
-    private Bitmap bitmap;
+    private Bitmap bitmapTileOriginal;
+    private Bitmap bmp_Copy;
 
     private Paint pTile;
     private Paint pLines;
@@ -31,37 +40,50 @@ public class GameMap extends View {
 
         this.mapHeight = mapHeight;
         this.mapWidth = mapWidth;
-
-        bitmap = BitmapFactory.decodeResource(
-                getResources(),
-                R.drawable.tile_map_ready
-        );
+        this.context = context;
 
         mapActivity = new MapActivity();
+
+        DisplayMetrics display = getResources().getDisplayMetrics();
+        int width = display.widthPixels;
+        int height = display.heightPixels;
+
+        mapTotalTiles = mapHeight * mapWidth;
+        counterBackLine = 0;
+        counterTiles = 0;
+
         gameObjects = mapActivity.getMapObjects();
+
+        pTile = new Paint();
+
+        bitmapTileOriginal = BitmapFactory
+                .decodeResource(getResources(), R.drawable.tile_map_ready);
+        bmp_Copy = bitmapTileOriginal.copy(Bitmap.Config.ARGB_8888, true);
+//        bmp_Copy.setPixel(width/mapWidth, height/mapHeight/2, Color.RED);
 
         pLines = new Paint();
         pLines.setColor(Color.BLACK);
-
-        pTile = new Paint();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        int w = getWidth();
-        int h = getHeight();
+        width = getWidth();
+//        height = getHeight();
+        DisplayMetrics display = getResources().getDisplayMetrics();
+        height = display.heightPixels;
 
         // Quadrillage
-        for (int i = 1; i < mapWidth; i++) {
-            canvas.drawLine(i * w / mapWidth, 0, i * w / mapWidth, h, pLines);
-            canvas.drawBitmap(bitmap, i * w / mapWidth, 0, pTile);
-        }
-
-        for (int j = 1; j < mapHeight; j++) {
-            canvas.drawLine(0, j * h / mapHeight, w, j * h / mapHeight, pLines);
-            canvas.drawBitmap(bitmap, 0, j * w / mapHeight, pTile);
+        for (int i = 0; i < mapTotalTiles; i++) {
+            counterTiles++;
+            if (i % 9 == 0) {
+                counterBackLine++;
+            }
+            if (i % 9 == 0) {
+                counterTiles = 0;
+            }
+            canvas.drawBitmap(bmp_Copy, counterTiles * width / mapWidth * 2, counterBackLine * height / mapHeight, pTile);
         }
     }
 }
