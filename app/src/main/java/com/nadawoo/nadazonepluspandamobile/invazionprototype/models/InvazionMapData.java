@@ -3,20 +3,22 @@ package com.nadawoo.nadazonepluspandamobile.invazionprototype.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Map;
+
 public class InvazionMapData {
     @SerializedName("zones")
     @Expose
-    private InvazionMapZone zone;
+    public Map<String, InvazionMapZone> invazionMapZone;
 
-    public InvazionMapData(InvazionMapZone zone) {
-        this.zone = zone;
+    public InvazionMapData(Map<String, InvazionMapZone> invazionMapZone) {
+        this.invazionMapZone = invazionMapZone;
     }
 
-    public InvazionMapZone getZone() {
-        return zone;
+    public Map<String, InvazionMapZone> getInvazionMapZone() {
+        return invazionMapZone;
     }
 
-    public void setZone(InvazionMapZone zone) {
-        this.zone = zone;
+    public void setInvazionMapZone(Map<String, InvazionMapZone> invazionMapZone) {
+        this.invazionMapZone = invazionMapZone;
     }
 }

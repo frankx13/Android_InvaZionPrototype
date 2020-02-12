@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class InvazionMap {
     @SerializedName("datas")
     @Expose
-    private InvazionMapData invazionMapData;
+    public InvazionMapData invazionMapData;
 
     public InvazionMap(InvazionMapData invazionMapData) {
         this.invazionMapData = invazionMapData;

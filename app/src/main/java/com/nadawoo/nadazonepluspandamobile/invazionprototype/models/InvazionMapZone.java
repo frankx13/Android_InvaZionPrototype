@@ -6,29 +6,29 @@ import com.google.gson.annotations.SerializedName;
 public class InvazionMapZone {
     @SerializedName("zombies")
     @Expose
-    private Integer zombiesNumber;
+    private Integer numberZombies;
     @SerializedName("citizens")
     @Expose
-    private Integer citizensNumber;
+    private Integer numberCitizens;
 
-    public InvazionMapZone(Integer zombiesNumber, Integer citizensNumber) {
-        this.zombiesNumber = zombiesNumber;
-        this.citizensNumber = citizensNumber;
+    public InvazionMapZone(Integer numberZombies, Integer numberCitizens) {
+        this.numberZombies = numberZombies;
+        this.numberCitizens = numberCitizens;
     }
 
-    public Integer getZombiesNumber() {
-        return zombiesNumber;
+    public Integer getNumberZombies() {
+        return numberZombies;
     }
 
-    public void setZombiesNumber(Integer zombies) {
-        this.zombiesNumber = zombies;
+    public void setNumberZombies(Integer numberZombies) {
+        this.numberZombies = numberZombies;
     }
 
-    public Integer getCitizensNumber() {
-        return citizensNumber;
+    public Integer getNumberCitizens() {
+        return numberCitizens;
     }
 
-    public void setCitizensNumber(Integer citizensNumber) {
-        this.citizensNumber = citizensNumber;
+    public void setNumberCitizens(Integer numberCitizens) {
+        this.numberCitizens = numberCitizens;
     }
 }

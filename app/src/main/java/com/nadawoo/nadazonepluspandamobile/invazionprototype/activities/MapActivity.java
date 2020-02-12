@@ -14,15 +14,13 @@ import com.nadawoo.nadazonepluspandamobile.invazionprototype.api.InvaZionService
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.InvazionMap;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.InvazionMapData;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.InvazionMapZone;
-import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.Pantheon;
-import com.nadawoo.nadazonepluspandamobile.invazionprototype.models.PantheonData;
 import com.nadawoo.nadazonepluspandamobile.invazionprototype.views.GameMap;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,11 +39,9 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
     private int zombies[];
     private int citizens[];
 
-    private HashMap<int[], String> mapContainer = new HashMap<>();
-
-    InvazionMapData mapData;
-    InvazionMapZone firstMapZone;
-    List<InvazionMapZone> mapZones;
+    private InvazionMap invazionMap;
+    private InvazionMapData invazionMapData;
+    private Map<String, InvazionMapZone> mapContainer = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +49,14 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
         setContentView(R.layout.activity_map2);
 
         initVars();
-        loadMapObjects();
-        initMapObjects();
-        initMapContainer();
+        loadMapData();
         map = new GameMap(this, mapHeight, mapWidth);
         setContentView(map);
 
         map.setOnTouchListener(this);
     }
 
-    private void loadMapObjects() {
+    private void loadMapData() {
         Client client = Client.getINSTANCE();
         InvaZionService service = client.getService();
         Call<InvazionMap> call = service.getMap();
@@ -70,11 +64,12 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
         call.enqueue(new Callback<InvazionMap>() {
             @Override
             public void onResponse(@NotNull Call<InvazionMap> call, @NotNull Response<InvazionMap> response) {
-                InvazionMap map = response.body();
-                if (map != null) {
-                    mapData = map.getInvazionMapData();
-                    Log.i("MAPDATA", "onResponse: " + mapData.getZone().getCitizensNumber());
+                invazionMap = response.body();
+                if (invazionMap != null) {
+                    invazionMapData = invazionMap.getInvazionMapData();
+                    Log.i("MAPDATA", "onResponse: " + invazionMapData.getInvazionMapZone().get("0_0").getNumberCitizens());
                 }
+                fillMapDataContainer();
             }
 
             @Override
@@ -85,21 +80,12 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
         });
     }
 
-    private void initMapObjects() {
-
-    }
-
-    private void initMapContainer() {
-        if (zombies != null) {
-            mapContainer.put(zombies, "zombies");
-        }
-        if (citizens != null) {
-            mapContainer.put(citizens, "citizens");
-        }
+    private void fillMapDataContainer() {
+        mapContainer = invazionMapData.getInvazionMapZone();
     }
 
     private void initVars() {
-        mapWidth = 10;
+        mapWidth = 19;
         mapHeight = 24;
     }
 
@@ -116,7 +102,7 @@ public class MapActivity extends AppCompatActivity implements View.OnTouchListen
         return true;
     }
 
-    public HashMap<int[], String> getMapObjects() {
+    public Map<String, InvazionMapZone> getMapObjects() {
         return mapContainer;
     }
 }
